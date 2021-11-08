@@ -96,12 +96,12 @@ public class UserServiceImplTest {
 	@Autowired
 	IUserService us;
 
-	@Test
+	/*@Test
 	@Order(2)
 	public void testRetrieveAllUsers() {
 	List<User> listUsers = us.retrieveAllUsers();
 	Assertions.assertEquals(23, listUsers.size());
-	}
+	}*/
 	
 	@Test
 	@Order(1)
