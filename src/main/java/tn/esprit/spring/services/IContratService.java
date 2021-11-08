@@ -10,8 +10,8 @@ public interface IContratService
 	 
 	List<Contrat> retrieveAllContrats(); 
 	Contrat addContrat(Contrat c);
-	void deleteContrat(String id);
+	void deleteContrat(Long reference);
 	Contrat updateContrat(Contrat c);
-	Contrat retrieveContrat(String id);
+	Contrat retrieveContrat(int reference);
 }
 

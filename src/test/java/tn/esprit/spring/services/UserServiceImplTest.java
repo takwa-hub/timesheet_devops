@@ -96,13 +96,15 @@ public class UserServiceImplTest {
 	@Autowired
 	IUserService us;
 
-	
+	@Test
+	@Order(2)
 	public void testRetrieveAllUsers() {
 	List<User> listUsers = us.retrieveAllUsers();
-	Assertions.assertEquals(20, listUsers.size());
+	Assertions.assertEquals(2, listUsers.size());
 	}
 	
-	
+	@Test
+	@Order(1)
 	public void testAddUser() throws ParseException, java.text.ParseException {
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 		Date d = dateFormat.parse("2015-03-23");
@@ -111,7 +113,8 @@ public class UserServiceImplTest {
 		Assertions.assertEquals(u.getLastName(), userAdded.getLastName());
 	}
 		
-	
+	@Test
+	@Order(3)
 	public void testUpdateUser() throws ParseException, java.text.ParseException {
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 		Date d = dateFormat.parse("2015-03-15");
@@ -121,14 +124,16 @@ public class UserServiceImplTest {
 		
 		
 	}
-	
+	/*@Test
+	@Order(5)
 	public void testDeleteUser(){
-		us.deleteUser("25");
-		Assertions.assertNull(us.retrieveUser("25"));
+		us.deleteUser("11");
+		Assertions.assertNull(us.retrieveUser("11"));
 		
-	}
+	}*/
 	
-	
+	@Test
+	@Order(4)
 	public void testRetrieveUser(){
 		User userRetrieved = us.retrieveUser("7");
 		Assertions.assertEquals(7L, userRetrieved.getId().longValue());

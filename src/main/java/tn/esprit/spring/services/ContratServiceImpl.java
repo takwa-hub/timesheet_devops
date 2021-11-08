@@ -57,20 +57,32 @@ package tn.esprit.spring.services;
 			return c_saved; 
 		}
 
-		@Override
-		public void deleteContrat(String id) {
+		
+		/*public void deleteContrat(String id) {
 			L.info("In Method deleteContrat :"); 
 			contratRepository.deleteById(Long.parseLong(id)); 
 			L.info("Out of Method deleteContrat with Sucess");  
+		}*/
+		@Override
+		public void deleteContrat(Long  reference) {
+			L.info("In Method deleteContrat :"); 
+			contratRepository.deleteById(reference); 
+			L.info("Out of Method deleteContrat with Sucess");  
 		}
 
-		@Override
+
+		/*@Override
 		public Contrat retrieveContrat(String id) {
 			L.info("In Method retrieveContrat :");
 			//Contrat c =  contratRepository.findById(Long.parseLong(id)).orElse(null);
 			Contrat c =  contratRepository.findById(Long.parseLong(id)).get(); 
 			L.info("Out of Method retrieveContrat with Sucess"); 
 			return c; 
+		}*/
+		@Override
+		public Contrat retrieveContrat(int reference) {
+			return contratRepository.findById((long) (reference)).get();
+			  
 		}
 
 	}
